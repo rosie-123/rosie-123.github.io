@@ -250,159 +250,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/Export-40b7e7d6-fa1f-4141-b89a-fab39eb7a218/Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/IMG_6366.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Let's Go Pippi Shrimp">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/29/Export-40b7e7d6-fa1f-4141-b89a-fab39eb7a218/Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/" itemprop="url">Export-40b7e7d6-fa1f-4141-b89a-fab39eb7a218/Lecture 8 835e586f1c2249eea3d55bf1b1aa0915</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-29T15:12:51-05:00">
-                2020-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Lecture-8"><a href="#Lecture-8" class="headerlink" title="Lecture 8"></a>Lecture 8</h1><h1 id="Linked-Lists"><a href="#Linked-Lists" class="headerlink" title="Linked Lists"></a>Linked Lists</h1><h3 id="Struct-Review"><a href="#Struct-Review" class="headerlink" title="Struct Review"></a>Struct Review</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">address</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> street[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">char</span> state[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">int</span> zip;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">person</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">address</span> <span class="title">addr</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> <span class="title">p</span>;</span></span><br><span class="line">    p.id = <span class="number">12345</span>;</span><br><span class="line">    p.addr.zip = <span class="number">54321</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">strncpy</span>(p.name, <span class="string">"Mike"</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> *<span class="title">pp</span> = &amp;<span class="title">p</span>;</span></span><br><span class="line">    pp -&gt; id = <span class="number">45678</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h3><p><img src="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled.png" alt="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled.png"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span> <span class="comment">// Must have a pointer here</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>head</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">head</span> = <span class="title">NULL</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">first</span> = <span class="title">malloc</span>(<span class="title">sizeof</span>(<span class="title">struct</span> <span class="title">node</span>));</span></span><br><span class="line">    first -&gt; data = <span class="number">10</span>;</span><br><span class="line">    first -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    head = first; <span class="comment">// a pointer equals to a pointer</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%201.png" alt="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%201.png"></p>
-<ul>
-<li>Append function</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">struct node* <span class="title">Append</span><span class="params">(struct node * head, <span class="keyword">int</span> data)</span> </span>&#123; <span class="comment">// append a node in the linked list</span></span><br><span class="line">    <span class="comment">// create the new node</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">new_node</span> = <span class="title">malloc</span>(<span class="title">sizeof</span>(<span class="title">struct</span> <span class="title">node</span>));</span></span><br><span class="line">    new_node -&gt; data = data;</span><br><span class="line">    new_node -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (head == <span class="literal">NULL</span>) <span class="keyword">return</span> new_node;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        struct node *current = head;</span><br><span class="line">        <span class="keyword">while</span> (current -&gt; next != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            current = current -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        current -&gt; next = new_node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%202.png" alt="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%202.png"></p>
-<ul>
-<li>Print function</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_list</span> <span class="params">(struct node *head)</span> </span>&#123; <span class="comment">// The head pointer in main will not be modified</span></span><br><span class="line">    <span class="keyword">while</span> (head != null) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, head -&gt; data);</span><br><span class="line">        head = head -&gt; next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>delete first function</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// to delete the very first element, we need a pointer as parameter to change the </span></span><br><span class="line"><span class="comment">// one that in main function (the function that calls delete_first function),</span></span><br><span class="line"><span class="comment">// otherwise, the 'head' in the upper level function would not be changed</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delete_first</span><span class="params">(struct node **phead)</span> </span>&#123;</span><br><span class="line">    *phead = (*phead) -&gt; next; <span class="comment">// *phead equals to the content of the head, equals</span></span><br><span class="line"><span class="comment">// to the address of the first element.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// whenever calling the method in main function, remember that we need to provide</span></span><br><span class="line"><span class="comment">// a pointer to a pointer, so as head is a pointer to the first element, which is</span></span><br><span class="line"><span class="comment">// struct node *head = NULL;</span></span><br><span class="line">delete_first(&amp;head);</span><br></pre></td></tr></table></figure>
-
-<p><img src="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%203.png" alt="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%203.png"></p>
-<p>The deleted element is still in the heap: Memory Leak. We need to free that memory.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delete_first</span><span class="params">(struct node **phead)</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">deleted</span> = *<span class="title">phead</span>;</span> <span class="comment">// store the address of the deleted element</span></span><br><span class="line">    *phead = (*phead) -&gt; next;</span><br><span class="line">    <span class="built_in">free</span>(deleted);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>If the linked list is empty</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (*phead == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/COMP-SCI-354-LECTURE-008/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -474,7 +321,7 @@
       
         
           
-            <h1 id="Lecture-8"><a href="#Lecture-8" class="headerlink" title="Lecture 8"></a>Lecture 8</h1><h1 id="Linked-Lists"><a href="#Linked-Lists" class="headerlink" title="Linked Lists"></a>Linked Lists</h1><h3 id="Struct-Review"><a href="#Struct-Review" class="headerlink" title="Struct Review"></a>Struct Review</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">address</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> street[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">char</span> state[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">int</span> zip;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">person</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">address</span> <span class="title">addr</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> <span class="title">p</span>;</span></span><br><span class="line">    p.id = <span class="number">12345</span>;</span><br><span class="line">    p.addr.zip = <span class="number">54321</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">strncpy</span>(p.name, <span class="string">"Mike"</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> *<span class="title">pp</span> = &amp;<span class="title">p</span>;</span></span><br><span class="line">    pp -&gt; id = <span class="number">45678</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="Linked-Lists"><a href="#Linked-Lists" class="headerlink" title="Linked Lists"></a>Linked Lists</h1><h3 id="Struct-Review"><a href="#Struct-Review" class="headerlink" title="Struct Review"></a>Struct Review</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">address</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> street[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">char</span> state[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">int</span> zip;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">person</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">address</span> <span class="title">addr</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> <span class="title">p</span>;</span></span><br><span class="line">    p.id = <span class="number">12345</span>;</span><br><span class="line">    p.addr.zip = <span class="number">54321</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">strncpy</span>(p.name, <span class="string">"Mike"</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> *<span class="title">pp</span> = &amp;<span class="title">p</span>;</span></span><br><span class="line">    pp -&gt; id = <span class="number">45678</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h3><p><img src="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled.png" alt="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled.png"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span> <span class="comment">// Must have a pointer here</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -1143,7 +990,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
