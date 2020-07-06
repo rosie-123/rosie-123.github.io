@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920int n &#x3D; 10;int *pn &#x3D; &amp;n;int **ppn &#x3D; &amp;pn;&#x2F;&#x2F; To access nn &#x3D; 3;*pn &#x3D; 3; &#x2F;&#x2F; dereference**ppn &#x3D; 3; &#x2F;&#x2F; dereferencing twice&#x2F;&#x2F; To access the address of nprintf(&quot;%p&quot;, &amp;am">
+<meta name="description" content="Bitwise OperationsCasting Review123&#x2F;&#x2F; Type casting short to unsigned intshort x &#x3D; 0xCFC7; &#x2F;&#x2F; -12345unsigned int y &#x3D; (unsigned)x;  This code is doing (1) 2 bytes to 4 bytes (2) signed to unsigned. So w">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[CS354-1]Pointers in C">
-<meta property="og:url" content="http://yoursite.com/2020/06/23/CS354-1-Pointers-in-C/index.html">
+<meta property="og:title" content="COMP SCI 354 LECTURE 013">
+<meta property="og:url" content="http://yoursite.com/2020/07/06/COMP-SCI-354-LECTURE-013/index.html">
 <meta property="og:site_name" content="Let&#39;s Go Pippi Shrimp">
-<meta property="og:description" content="1234567891011121314151617181920int n &#x3D; 10;int *pn &#x3D; &amp;n;int **ppn &#x3D; &amp;pn;&#x2F;&#x2F; To access nn &#x3D; 3;*pn &#x3D; 3; &#x2F;&#x2F; dereference**ppn &#x3D; 3; &#x2F;&#x2F; dereferencing twice&#x2F;&#x2F; To access the address of nprintf(&quot;%p&quot;, &amp;am">
-<meta property="article:published_time" content="2020-06-23T22:02:48.000Z">
-<meta property="article:modified_time" content="2020-06-23T22:03:48.877Z">
+<meta property="og:description" content="Bitwise OperationsCasting Review123&#x2F;&#x2F; Type casting short to unsigned intshort x &#x3D; 0xCFC7; &#x2F;&#x2F; -12345unsigned int y &#x3D; (unsigned)x;  This code is doing (1) 2 bytes to 4 bytes (2) signed to unsigned. So w">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/07/UF1UOJ.md.png">
+<meta property="article:published_time" content="2020-07-06T22:01:17.000Z">
+<meta property="article:modified_time" content="2020-07-06T22:09:59.421Z">
 <meta property="article:author" content="RC">
 <meta property="article:tag" content="Course Notes">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/07/07/UF1UOJ.md.png">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/06/23/CS354-1-Pointers-in-C/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/06/COMP-SCI-354-LECTURE-013/"/>
 
 
 
 
 
-  <title>[CS354-1]Pointers in C | Let's Go Pippi Shrimp</title>
+  <title>COMP SCI 354 LECTURE 013 | Let's Go Pippi Shrimp</title>
   
 
 
@@ -252,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/23/CS354-1-Pointers-in-C/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/COMP-SCI-354-LECTURE-013/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RC">
@@ -269,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[CS354-1]Pointers in C</h1>
+          <h1 class="post-title" itemprop="name headline">COMP SCI 354 LECTURE 013</h1>
         
 
         <div class="post-meta">
@@ -281,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-23T17:02:48-05:00">
-                2020-06-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-06T17:01:17-05:00">
+                2020-07-06
               </time>
             
 
@@ -319,27 +321,45 @@
       
 
       
-        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line"><span class="keyword">int</span> **ppn = &amp;pn;</span><br><span class="line"></span><br><span class="line"><span class="comment">// To access n</span></span><br><span class="line">n = <span class="number">3</span>;</span><br><span class="line">*pn = <span class="number">3</span>; <span class="comment">// dereference</span></span><br><span class="line">**ppn = <span class="number">3</span>; <span class="comment">// dereferencing twice</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// To access the address of n</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, &amp;n);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, pn); <span class="comment">// pn is the exactly the address of n</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, *ppn);</span><br><span class="line"></span><br><span class="line"><span class="comment">// To access the address of pn</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, &amp;pn);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, ppn);</span><br><span class="line"></span><br><span class="line"><span class="comment">// To access the address of ppn</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, &amp;ppn);</span><br></pre></td></tr></table></figure>
+        <h1 id="Bitwise-Operations"><a href="#Bitwise-Operations" class="headerlink" title="Bitwise Operations"></a>Bitwise Operations</h1><h2 id="Casting-Review"><a href="#Casting-Review" class="headerlink" title="Casting Review"></a>Casting Review</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Type casting short to unsigned int</span></span><br><span class="line">short x = <span class="number">0xCFC7</span>; <span class="comment">// -12345</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> y = (<span class="keyword">unsigned</span>)x;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Assign-a-value-to-a-variable"><a href="#Assign-a-value-to-a-variable" class="headerlink" title="Assign a value to a variable"></a>Assign a value to a variable</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
-
+<p>This code is doing (1) 2 bytes to 4 bytes (2) signed to unsigned.</p>
+<p>So which comes first?</p>
 <ul>
-<li>Step 1: <code>int a</code> Allocate a piece of memory for a, so a <strong>points to</strong> this ‘memory block’.</li>
-<li>Step 2: <code>a = 5</code> Store 5 (in binary) in this memory block.</li>
+<li>Size comes first: 0xCFC7 → 0xFFFF CFC7</li>
+<li>Then signed to unsigned: Still 0xFFFF CFC7 which is 42945495</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"x = %hX, x = %d \n"</span>, x, x);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"y = %dX, y = &amp;u \n"</span>, y, y);</span><br></pre></td></tr></table></figure>
 
-<p>store the input value into the piece of memory that a points to.</p>
-<h3 id="About-int"><a href="#About-int" class="headerlink" title="About int*"></a>About int*</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* p = &amp;a;</span><br></pre></td></tr></table></figure>
+<h3 id="Default-Casting"><a href="#Default-Casting" class="headerlink" title="Default Casting"></a>Default Casting</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -1 &lt; 0 true</span></span><br><span class="line"><span class="comment">// -1 &lt; 0U</span></span><br><span class="line"><span class="comment">// U makes the literal value into an unsigned number</span></span><br><span class="line"><span class="comment">// Signed type is converted to unsigned type by default</span></span><br><span class="line"><span class="comment">// So -1 &lt; 0U is false</span></span><br></pre></td></tr></table></figure>
 
-<p>The variable, is <code>p</code>, not *p. <code>p</code> points to a new piece of memory that stores the address of a.</p>
-<h3 id="About-int-1"><a href="#About-int-1" class="headerlink" title="About int**"></a>About int**</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>** q = &amp;p;</span><br></pre></td></tr></table></figure>
+<h3 id="The-endianness"><a href="#The-endianness" class="headerlink" title="The endianness"></a>The endianness</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">0x87654321</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;num;</span><br><span class="line"><span class="keyword">char</span> *pc = (<span class="keyword">char</span> *)p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%p: mem[%d] = %hhx \n"</span>, &amp;pc[i], i, pc[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>The variable is <code>q</code>, not <em>q or *</em>q. <code>q</code> stores the memory location of p.</p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *s1 = <span class="string">"CS354"</span>; <span class="comment">// exactly same as char s1[] = "CS354";</span></span><br><span class="line">    <span class="keyword">char</span> *s2 = <span class="string">"is"</span>;</span><br><span class="line">    <span class="keyword">char</span> *s3 = <span class="string">"awesome"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"s1: %p \n"</span>, s1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"*s1: %c \n"</span>, *s1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"*(s1+1): %c \n"</span>, *(s1+<span class="number">1</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">char</span> *pca[<span class="number">3</span>] = &#123;s1, s2, s3&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pca[0]: %p \n"</span>, pca[<span class="number">0</span>]); <span class="comment">// pca[0] == s1 == the address of 'C'</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"*pca[0]: %c \n"</span>, *pca[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">char</span> **ppca = pca;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ppca[0]: %s \n"</span>, ppca[<span class="number">0</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ppca[1]: %s \n"</span>, ppca[<span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ppca[2]: %s \n"</span>, ppca[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Bitwise-Operators"><a href="#Bitwise-Operators" class="headerlink" title="Bitwise Operators"></a>Bitwise Operators</h2><ul>
+<li>OR <code>|</code></li>
+<li>AND <code>&amp;</code></li>
+<li>NOT <code>~</code></li>
+<li>EX-OR <code>^</code></li>
+<li>Left shift <code>&lt;&lt;</code></li>
+<li>Right shift <code>&gt;&gt;</code>: For signed number, it will shift 1s from left most; For unsigned number, it will shift 0s from the left most.</li>
+</ul>
+<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><ol>
+<li><p>Bit Masks</p>
+<p> Extract certain bits from a pattern (i. e. Extract the four least significant bits. Extract <code>0010</code> from <code>1001 0010</code>, we can use<code>&amp;0000 1111</code> as a mask).</p>
+</li>
+<li><p>Packed ints</p>
+<p> In Computer Graphics, red, green, blue and alpha(transparency) can be stored in a integer since each of them occupies 1 byte. The problem is how to get the value of blue. Also, we need shift certain bits and</p>
+</li>
+<li><p>Bit Flags</p>
+<p> Bit flags are a very efficient way to store <code>boolean</code> data. Store multiple boolean data in an integer.</p>
+<p> <img src="https://s1.ax1x.com/2020/07/07/UF1UOJ.md.png" alt="Bit Operators as Bit Flags"></p>
+</li>
+<li><p>Multiplication &amp; Division</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">14</span> * <span class="number">2</span> = <span class="number">28</span></span><br><span class="line"><span class="number">0000</span> <span class="number">1110</span></span><br><span class="line">*<span class="number">2</span></span><br><span class="line"><span class="number">0001</span> <span class="number">1100</span></span><br></pre></td></tr></table></figure>
 
-<p>The output:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s1: <span class="number">0x102cb5f34</span></span><br><span class="line">*s1: C</span><br><span class="line">*(s1+<span class="number">1</span>): S</span><br><span class="line"></span><br><span class="line">pca[<span class="number">0</span>]: <span class="number">0x102cb5f34</span></span><br><span class="line">*pca[<span class="number">0</span>]: C</span><br><span class="line"></span><br><span class="line">ppca[<span class="number">0</span>]: CS354</span><br><span class="line">ppca[<span class="number">1</span>]: is</span><br><span class="line">ppca[<span class="number">2</span>]: awesome</span><br></pre></td></tr></table></figure>
+<p> multiplying by 2 is equal to left shift one bit in binary</p>
+</li>
+</ol>
 
       
     </div>
@@ -370,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/17/LeetCode-%E6%A0%91%E9%97%AE%E9%A2%98%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93-%E4%B8%80/" rel="next" title="[LeetCode]树问题代码总结(一)">
-                <i class="fa fa-chevron-left"></i> [LeetCode]树问题代码总结(一)
+              <a href="/2020/06/29/COMP-SCI-354-LECTURE-008/" rel="next" title="COMP SCI 354 LECTURE 008">
+                <i class="fa fa-chevron-left"></i> COMP SCI 354 LECTURE 008
               </a>
             
           </div>
@@ -379,10 +399,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/06/29/COMP-SCI-354-LECTURE-008/" rel="prev" title="COMP SCI 354 LECTURE 008">
-                COMP SCI 354 LECTURE 008 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -525,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Assign-a-value-to-a-variable"><span class="nav-number">1.</span> <span class="nav-text">Assign a value to a variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#About-int"><span class="nav-number">2.</span> <span class="nav-text">About int*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#About-int-1"><span class="nav-number">3.</span> <span class="nav-text">About int**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">4.</span> <span class="nav-text">Example</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bitwise-Operations"><span class="nav-number">1.</span> <span class="nav-text">Bitwise Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Casting-Review"><span class="nav-number">1.1.</span> <span class="nav-text">Casting Review</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Default-Casting"><span class="nav-number">1.1.1.</span> <span class="nav-text">Default Casting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-endianness"><span class="nav-number">1.1.2.</span> <span class="nav-text">The endianness</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bitwise-Operators"><span class="nav-number">1.2.</span> <span class="nav-text">Bitwise Operators</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Applications"><span class="nav-number">1.2.1.</span> <span class="nav-text">Applications</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
