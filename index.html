@@ -250,6 +250,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/26/JavaScript-Promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_6366.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Let's Go Pippi Shrimp">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/26/JavaScript-Promise/" itemprop="url">JavaScript Promise</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-26T00:09:04-05:00">
+                2020-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">1</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (a == <span class="number">2</span>) &#123;</span><br><span class="line">        resolve(<span class="string">'Success'</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(<span class="string">'Failed'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// Anything inside .then method is going to run after resolve</span></span><br><span class="line"><span class="comment">// .then take a function as parameter</span></span><br><span class="line">p.then(<span class="function">(<span class="params">message</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'.then'</span>+message)</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">message</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'.catch'</span>+message) <span class="comment">// run if promise rejected</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>An example of callback
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/26/JavaScript-Promise/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/Comparison-in-Java/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -320,29 +447,17 @@
 
       
         
-          
-            <p>When camparing custom types, or objects that can’t be directly compared, we make use of <code>Comparator</code> or <code>Comparable</code> interfaces.</p>
+          <p>When camparing custom types, or objects that can’t be directly compared, we make use of <code>Comparator</code> or <code>Comparable</code> interfaces.</p>
 <h3 id="Comparable"><a href="#Comparable" class="headerlink" title="Comparable"></a>Comparable</h3><p><code>Comparable</code> is an interface that can compare objects with the same type, which is called the class’s <strong>“natural ordering”</strong>.</p>
 <p>Assume we have a player class, to enable the objects to be able to be compared</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Player</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Player</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Player otherPlayer)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">this</span>.getRanking() - otherPlayer.getRanking());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>After implementing the <code>Comparable</code> interface, player objects can be sorted by calling <code>Collections.sort(playerTeam)</code> where <code>playerTeam</code> is a collection of players.</p>
-<h3 id="Comparator"><a href="#Comparator" class="headerlink" title="Comparator"></a>Comparator</h3><p>this interface provides a more <strong>flexible</strong> manner to sort custom items. <code>Comparator</code> defines method <code>compare(arg1, arg2)</code>, which works similarly to the previous <code>compareTo</code> method.</p>
-<p><code>Comparator</code> needs to be created</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">playerComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Player</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Player player1, Player player2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (player1.getRanking() - player2.getRanking());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>To use this comparator, we can call</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(playerTeam, playerComparator);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Lambda-expression-and-comparators"><a href="#Lambda-expression-and-comparators" class="headerlink" title="Lambda expression and comparators"></a>Lambda expression and comparators</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Comparator&lt;Player&gt; compareByRanking = (Player p1, Player p2) -&gt; p1.getRanking() - p2.getRanking();</span><br></pre></td></tr></table></figure>
-
-<p>By the Comparator.comparing method</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Comparator&lt;Player&gt; compareByRanking = Comparator.comparing(Player::getRanking);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Example-in-LeetCode-406"><a href="#Example-in-LeetCode-406" class="headerlink" title="Example in LeetCode 406"></a>Example in LeetCode 406</h3><p>To compare items in a two-dimensions array by comparing their first items.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// people is a 2-d array</span></span><br><span class="line">Arrays.sort(people, (o1, o2) -&gt; o1[<span class="number">0</span>] == o2[<span class="number">0</span>] ? o1[<span class="number">1</span>] - o2[<span class="number">1</span>] : o2[<span class="number">0</span>] - o1[<span class="number">0</span>]);</span><br><span class="line"><span class="comment">// The first items need to be sorted in a descending order</span></span><br><span class="line"><span class="comment">// The second items need to be sorted in a ascending order</span></span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/22/Comparison-in-Java/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -459,8 +574,7 @@
 
       
         
-          
-            <h1 id="Bitwise-Operations"><a href="#Bitwise-Operations" class="headerlink" title="Bitwise Operations"></a>Bitwise Operations</h1><h2 id="Casting-Review"><a href="#Casting-Review" class="headerlink" title="Casting Review"></a>Casting Review</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Type casting short to unsigned int</span></span><br><span class="line">short x = <span class="number">0xCFC7</span>; <span class="comment">// -12345</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> y = (<span class="keyword">unsigned</span>)x;</span><br></pre></td></tr></table></figure>
+          <h1 id="Bitwise-Operations"><a href="#Bitwise-Operations" class="headerlink" title="Bitwise Operations"></a>Bitwise Operations</h1><h2 id="Casting-Review"><a href="#Casting-Review" class="headerlink" title="Casting Review"></a>Casting Review</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Type casting short to unsigned int</span></span><br><span class="line">short x = <span class="number">0xCFC7</span>; <span class="comment">// -12345</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> y = (<span class="keyword">unsigned</span>)x;</span><br></pre></td></tr></table></figure>
 
 <p>This code is doing (1) 2 bytes to 4 bytes (2) signed to unsigned.</p>
 <p>So which comes first?</p>
@@ -469,38 +583,13 @@
 <li>Then signed to unsigned: Still 0xFFFF CFC7 which is 42945495</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"x = %hX, x = %d \n"</span>, x, x);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"y = %dX, y = &amp;u \n"</span>, y, y);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Default-Casting"><a href="#Default-Casting" class="headerlink" title="Default Casting"></a>Default Casting</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -1 &lt; 0 true</span></span><br><span class="line"><span class="comment">// -1 &lt; 0U</span></span><br><span class="line"><span class="comment">// U makes the literal value into an unsigned number</span></span><br><span class="line"><span class="comment">// Signed type is converted to unsigned type by default</span></span><br><span class="line"><span class="comment">// So -1 &lt; 0U is false</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="The-endianness"><a href="#The-endianness" class="headerlink" title="The endianness"></a>The endianness</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">0x87654321</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;num;</span><br><span class="line"><span class="keyword">char</span> *pc = (<span class="keyword">char</span> *)p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%p: mem[%d] = %hhx \n"</span>, &amp;pc[i], i, pc[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Bitwise-Operators"><a href="#Bitwise-Operators" class="headerlink" title="Bitwise Operators"></a>Bitwise Operators</h2><ul>
-<li>OR <code>|</code></li>
-<li>AND <code>&amp;</code></li>
-<li>NOT <code>~</code></li>
-<li>EX-OR <code>^</code></li>
-<li>Left shift <code>&lt;&lt;</code></li>
-<li>Right shift <code>&gt;&gt;</code>: For signed number, it will shift 1s from left most; For unsigned number, it will shift 0s from the left most.</li>
-</ul>
-<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><ol>
-<li><p>Bit Masks</p>
-<p> Extract certain bits from a pattern (i. e. Extract the four least significant bits. Extract <code>0010</code> from <code>1001 0010</code>, we can use<code>&amp;0000 1111</code> as a mask).</p>
-</li>
-<li><p>Packed ints</p>
-<p> In Computer Graphics, red, green, blue and alpha(transparency) can be stored in a integer since each of them occupies 1 byte. The problem is how to get the value of blue. Also, we need shift certain bits and</p>
-</li>
-<li><p>Bit Flags</p>
-<p> Bit flags are a very efficient way to store <code>boolean</code> data. Store multiple boolean data in an integer.</p>
-<p> <img src="https://s1.ax1x.com/2020/07/07/UF1UOJ.md.png" alt="Bit Operators as Bit Flags"></p>
-</li>
-<li><p>Multiplication &amp; Division</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">14</span> * <span class="number">2</span> = <span class="number">28</span></span><br><span class="line"><span class="number">0000</span> <span class="number">1110</span></span><br><span class="line">*<span class="number">2</span></span><br><span class="line"><span class="number">0001</span> <span class="number">1100</span></span><br></pre></td></tr></table></figure>
-
-<p> multiplying by 2 is equal to left shift one bit in binary</p>
-</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/06/COMP-SCI-354-LECTURE-013/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -617,44 +706,14 @@
 
       
         
-          
-            <h1 id="Linked-Lists"><a href="#Linked-Lists" class="headerlink" title="Linked Lists"></a>Linked Lists</h1><h3 id="Struct-Review"><a href="#Struct-Review" class="headerlink" title="Struct Review"></a>Struct Review</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">address</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> street[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">char</span> state[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">int</span> zip;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">person</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">address</span> <span class="title">addr</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> <span class="title">p</span>;</span></span><br><span class="line">    p.id = <span class="number">12345</span>;</span><br><span class="line">    p.addr.zip = <span class="number">54321</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">strncpy</span>(p.name, <span class="string">"Mike"</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> *<span class="title">pp</span> = &amp;<span class="title">p</span>;</span></span><br><span class="line">    pp -&gt; id = <span class="number">45678</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h3><p><img src="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled.png" alt="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled.png"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span> <span class="comment">// Must have a pointer here</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>head</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">head</span> = <span class="title">NULL</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">first</span> = <span class="title">malloc</span>(<span class="title">sizeof</span>(<span class="title">struct</span> <span class="title">node</span>));</span></span><br><span class="line">    first -&gt; data = <span class="number">10</span>;</span><br><span class="line">    first -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    head = first; <span class="comment">// a pointer equals to a pointer</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%201.png" alt="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%201.png"></p>
-<ul>
-<li>Append function</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">struct node* <span class="title">Append</span><span class="params">(struct node * head, <span class="keyword">int</span> data)</span> </span>&#123; <span class="comment">// append a node in the linked list</span></span><br><span class="line">    <span class="comment">// create the new node</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">new_node</span> = <span class="title">malloc</span>(<span class="title">sizeof</span>(<span class="title">struct</span> <span class="title">node</span>));</span></span><br><span class="line">    new_node -&gt; data = data;</span><br><span class="line">    new_node -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (head == <span class="literal">NULL</span>) <span class="keyword">return</span> new_node;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        struct node *current = head;</span><br><span class="line">        <span class="keyword">while</span> (current -&gt; next != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            current = current -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        current -&gt; next = new_node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%202.png" alt="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%202.png"></p>
-<ul>
-<li>Print function</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_list</span> <span class="params">(struct node *head)</span> </span>&#123; <span class="comment">// The head pointer in main will not be modified</span></span><br><span class="line">    <span class="keyword">while</span> (head != null) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, head -&gt; data);</span><br><span class="line">        head = head -&gt; next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>delete first function</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// to delete the very first element, we need a pointer as parameter to change the</span></span><br><span class="line"><span class="comment">// one that in main function (the function that calls delete_first function),</span></span><br><span class="line"><span class="comment">// otherwise, the 'head' in the upper level function would not be changed</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delete_first</span><span class="params">(struct node **phead)</span> </span>&#123;</span><br><span class="line">    *phead = (*phead) -&gt; next; <span class="comment">// *phead equals to the content of the head, equals</span></span><br><span class="line"><span class="comment">// to the address of the first element.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// whenever calling the method in main function, remember that we need to provide</span></span><br><span class="line"><span class="comment">// a pointer to a pointer, so as head is a pointer to the first element, which is</span></span><br><span class="line"><span class="comment">// struct node *head = NULL;</span></span><br><span class="line">delete_first(&amp;head);</span><br></pre></td></tr></table></figure>
-
-<p><img src="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%203.png" alt="Lecture%208%20835e586f1c2249eea3d55bf1b1aa0915/Untitled%203.png"></p>
-<p>The deleted element is still in the heap: Memory Leak. We need to free that memory.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delete_first</span><span class="params">(struct node **phead)</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">deleted</span> = *<span class="title">phead</span>;</span> <span class="comment">// store the address of the deleted element</span></span><br><span class="line">    *phead = (*phead) -&gt; next;</span><br><span class="line">    <span class="built_in">free</span>(deleted);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>If the linked list is empty</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (*phead == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
-
-          
+          <h1 id="Linked-Lists"><a href="#Linked-Lists" class="headerlink" title="Linked Lists"></a>Linked Lists</h1><h3 id="Struct-Review"><a href="#Struct-Review" class="headerlink" title="Struct Review"></a>Struct Review</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">address</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> street[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">char</span> state[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">int</span> zip;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">person</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">address</span> <span class="title">addr</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> <span class="title">p</span>;</span></span><br><span class="line">    p.id = <span class="number">12345</span>;</span><br><span class="line">    p.addr.zip = <span class="number">54321</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">strncpy</span>(p.name, <span class="string">"Mike"</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">person</span> *<span class="title">pp</span> = &amp;<span class="title">p</span>;</span></span><br><span class="line">    pp -&gt; id = <span class="number">45678</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/29/COMP-SCI-354-LECTURE-008/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -771,30 +830,14 @@
 
       
         
-          
-            <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line"><span class="keyword">int</span> **ppn = &amp;pn;</span><br><span class="line"></span><br><span class="line"><span class="comment">// To access n</span></span><br><span class="line">n = <span class="number">3</span>;</span><br><span class="line">*pn = <span class="number">3</span>; <span class="comment">// dereference</span></span><br><span class="line">**ppn = <span class="number">3</span>; <span class="comment">// dereferencing twice</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// To access the address of n</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, &amp;n);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, pn); <span class="comment">// pn is the exactly the address of n</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, *ppn);</span><br><span class="line"></span><br><span class="line"><span class="comment">// To access the address of pn</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, &amp;pn);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, ppn);</span><br><span class="line"></span><br><span class="line"><span class="comment">// To access the address of ppn</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, &amp;ppn);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Assign-a-value-to-a-variable"><a href="#Assign-a-value-to-a-variable" class="headerlink" title="Assign a value to a variable"></a>Assign a value to a variable</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Step 1: <code>int a</code> Allocate a piece of memory for a, so a <strong>points to</strong> this ‘memory block’.</li>
-<li>Step 2: <code>a = 5</code> Store 5 (in binary) in this memory block.</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);</span><br></pre></td></tr></table></figure>
-
-<p>store the input value into the piece of memory that a points to.</p>
-<h3 id="About-int"><a href="#About-int" class="headerlink" title="About int*"></a>About int*</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* p = &amp;a;</span><br></pre></td></tr></table></figure>
-
-<p>The variable, is <code>p</code>, not *p. <code>p</code> points to a new piece of memory that stores the address of a.</p>
-<h3 id="About-int-1"><a href="#About-int-1" class="headerlink" title="About int**"></a>About int**</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>** q = &amp;p;</span><br></pre></td></tr></table></figure>
-
-<p>The variable is <code>q</code>, not <em>q or *</em>q. <code>q</code> stores the memory location of p.</p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *s1 = <span class="string">"CS354"</span>; <span class="comment">// exactly same as char s1[] = "CS354";</span></span><br><span class="line">    <span class="keyword">char</span> *s2 = <span class="string">"is"</span>;</span><br><span class="line">    <span class="keyword">char</span> *s3 = <span class="string">"awesome"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"s1: %p \n"</span>, s1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"*s1: %c \n"</span>, *s1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"*(s1+1): %c \n"</span>, *(s1+<span class="number">1</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">char</span> *pca[<span class="number">3</span>] = &#123;s1, s2, s3&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pca[0]: %p \n"</span>, pca[<span class="number">0</span>]); <span class="comment">// pca[0] == s1 == the address of 'C'</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"*pca[0]: %c \n"</span>, *pca[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">char</span> **ppca = pca;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ppca[0]: %s \n"</span>, ppca[<span class="number">0</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ppca[1]: %s \n"</span>, ppca[<span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ppca[2]: %s \n"</span>, ppca[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>The output:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s1: <span class="number">0x102cb5f34</span></span><br><span class="line">*s1: C</span><br><span class="line">*(s1+<span class="number">1</span>): S</span><br><span class="line"></span><br><span class="line">pca[<span class="number">0</span>]: <span class="number">0x102cb5f34</span></span><br><span class="line">*pca[<span class="number">0</span>]: C</span><br><span class="line"></span><br><span class="line">ppca[<span class="number">0</span>]: CS354</span><br><span class="line">ppca[<span class="number">1</span>]: is</span><br><span class="line">ppca[<span class="number">2</span>]: awesome</span><br></pre></td></tr></table></figure>
-
-          
+          <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line"><span class="keyword">int</span> **ppn = &amp;pn;</span><br><span class="line"></span><br><span class="line"><span class="comment">// To access n</span></span><br><span class="line">n = <span class="number">3</span>;</span><br><span class="line">*pn = <span class="number">3</span>; <span class="comment">// dereference</span></span><br><span class="line">**ppn = <span class="number">3</span>; <span class="comment">// dereferencing twice</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// To access the address of n</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, &amp;n);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, pn); <span class="comment">// pn is the exactly the address of n</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, *ppn);</span><br><span class="line"></span><br><span class="line"><span class="comment">// To access the address of pn</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, &amp;pn);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, ppn);</span><br><span class="line"></span><br><span class="line"><span class="comment">// To access the address of ppn</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%p"</span>, &amp;ppn);</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/23/CS354-1-Pointers-in-C/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -911,27 +954,18 @@
 
       
         
-          
-            <h3 id="101-对称二叉树"><a href="#101-对称二叉树" class="headerlink" title="101 对称二叉树"></a>101 对称二叉树</h3><ol>
+          <h3 id="101-对称二叉树"><a href="#101-对称二叉树" class="headerlink" title="101 对称二叉树"></a>101 对称二叉树</h3><ol>
 <li><p>递归</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">return</span> symmetric(root.left, root.right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">symmetric</span> <span class="params">(TreeNode leftNode, TreeNode rightNode)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (leftNode == <span class="keyword">null</span> &amp;&amp; rightNode == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (leftNode == <span class="keyword">null</span> || rightNode == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (leftNode.val != rightNode.val) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">return</span> symmetric(leftNode.left, rightNode.right) &amp;&amp; symmetric(leftNode.right, rightNode.left);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>迭代 - 根本思想不变，依然是比较<code>leftNode.right.value == rightNode.val</code>. 不需要把<code>root</code>入队，让<code>root.left</code>和<code>root.right</code>入队，作为队列前2元素，出队比较，若相同，将<code>leftNode.right和rightNode.left</code>、<code>leftNode.left和rightNode.right</code>分别作为pair入队即可。</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        Queue&lt;TreeNode&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        q.add(root.left);</span><br><span class="line">        q.add(root.right);</span><br><span class="line">        <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">            TreeNode node1 = q.poll();</span><br><span class="line">            TreeNode node2 = q.poll();</span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">continue</span>; <span class="comment">// 【不能直接 return true】</span></span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 != <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (node1 != <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (node1.val != node2.val) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            q.add(node1.left);</span><br><span class="line">            q.add(node2.right);</span><br><span class="line">            q.add(node1.right);</span><br><span class="line">            q.add(node2.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="树的翻转问题"><a href="#树的翻转问题" class="headerlink" title="树的翻转问题"></a>树的翻转问题</h2><h3 id="226-翻转二叉树-EASY"><a href="#226-翻转二叉树-EASY" class="headerlink" title="226 翻转二叉树 [EASY]"></a>226 翻转二叉树 [EASY]</h3><p>简单的递归解法，没有写迭代法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">invertTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> root;</span><br><span class="line">        TreeNode temp = invertTree(root.left);</span><br><span class="line">        root.left = invertTree(root.right);</span><br><span class="line">        root.right = temp;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="951-翻转等价二叉树-MEDIUM"><a href="#951-翻转等价二叉树-MEDIUM" class="headerlink" title="951 翻转等价二叉树 [MEDIUM]"></a>951 翻转等价二叉树 [MEDIUM]</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">flipEquiv</span><span class="params">(TreeNode root1, TreeNode root2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root1 == <span class="keyword">null</span> &amp;&amp; root2 == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (root1 == <span class="keyword">null</span> || root2 == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (root1.val != root2.val) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> no_flip = flipEquiv(root1.left, root2.left) &amp;&amp; flipEquiv(root1.right, root2.right);</span><br><span class="line">        <span class="keyword">boolean</span> flip = flipEquiv(root1.left, root2.right) &amp;&amp; flipEquiv(root1.right, root2.left);</span><br><span class="line">        <span class="keyword">return</span> no_flip || flip;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="971-翻转二叉树以匹配先序遍历-MEDIUM"><a href="#971-翻转二叉树以匹配先序遍历-MEDIUM" class="headerlink" title="971 翻转二叉树以匹配先序遍历 [MEDIUM]"></a>971 翻转二叉树以匹配先序遍历 [MEDIUM]</h3><ul>
-<li>因为是先序遍历，所以<code>voyage[++index]</code>的对应的是当前结点的左孩子<code>current.left</code>对应的值，若<code>current.left.val</code>与该值不符，就先交换左右结点（不管交换后是否对应）。然后递归先左后右（先序）。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> idx = <span class="number">0</span>; <span class="comment">// 记录当前 voyage 的index</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> flag = <span class="keyword">false</span>; <span class="comment">// 记录当前二叉树是否能通过翻转匹配先序遍历</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">flipMatchVoyage</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] voyage)</span> </span>&#123;</span><br><span class="line">        flip(root, voyage);</span><br><span class="line">        <span class="keyword">if</span> (flag) <span class="keyword">return</span> Arrays.asList(-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">flip</span> <span class="params">(TreeNode root, <span class="keyword">int</span>[] voyage)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (root.val != voyage[idx++]) &#123;</span><br><span class="line">            flag = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (root.left != <span class="keyword">null</span> &amp;&amp; root.left.val != voyage[idx]) &#123;<span class="comment">// 当前结点需要翻转</span></span><br><span class="line">                TreeNode temp = root.left;</span><br><span class="line">                root.left = root.right;</span><br><span class="line">                root.right = temp;</span><br><span class="line">                res.add(root.val); <span class="comment">// 翻转了的加入List中</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        flip(root.left, voyage);</span><br><span class="line">        flip(root.right, voyage);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/17/LeetCode-%E6%A0%91%E9%97%AE%E9%A2%98%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93-%E4%B8%80/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1048,34 +1082,18 @@
 
       
         
-          
-            <h1 id="LeetCode树的问题（一）：102层序遍历-amp-337打家劫舍III"><a href="#LeetCode树的问题（一）：102层序遍历-amp-337打家劫舍III" class="headerlink" title="LeetCode树的问题（一）：102层序遍历 &amp; 337打家劫舍III"></a>LeetCode树的问题（一）：102层序遍历 &amp; 337打家劫舍III</h1><h2 id="DFS和BFS遍历"><a href="#DFS和BFS遍历" class="headerlink" title="DFS和BFS遍历"></a>DFS和BFS遍历</h2><ol>
+          <h2 id="DFS和BFS遍历"><a href="#DFS和BFS遍历" class="headerlink" title="DFS和BFS遍历"></a>DFS和BFS遍历</h2><ol>
 <li><p>递归的DFS遍历</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span> <span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">	dfs(root.left);</span><br><span class="line">	dfs(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用队列的BFS遍历</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span> <span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">	Queue&lt;Node&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">	queue.add(root);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(!queue.isEmpty()) &#123;</span><br><span class="line">		Node node = queue.poll();</span><br><span class="line">		<span class="keyword">if</span> (node.left != <span class="keyword">null</span>) queue.add(node.left);</span><br><span class="line">		<span class="keyword">if</span> (node.right != <span class="keyword">null</span>) queue.add(node.right);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="BFS的应用-No-102-二叉树的层序遍历-Binary-Tree-Level-Order-Traversal"><a href="#BFS的应用-No-102-二叉树的层序遍历-Binary-Tree-Level-Order-Traversal" class="headerlink" title="BFS的应用 - No.102 二叉树的层序遍历 Binary Tree Level Order Traversal"></a>BFS的应用 - No.102 二叉树的层序遍历 Binary Tree Level Order Traversal</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// given a binary tree</span></span><br><span class="line"><span class="comment">//		3</span></span><br><span class="line"><span class="comment">//   / \</span></span><br><span class="line"><span class="comment">//  9  20</span></span><br><span class="line"><span class="comment">//    /  \</span></span><br><span class="line"><span class="comment">//   15   7</span></span><br><span class="line"><span class="comment">// return a List&lt;List&lt;Integer&gt;&gt; like:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//[</span></span><br><span class="line"><span class="comment">//  [3],</span></span><br><span class="line"><span class="comment">//  [9,20],</span></span><br><span class="line"><span class="comment">//  [15,7]</span></span><br><span class="line"><span class="comment">//]</span></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode root) &#123;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> res;</span><br><span class="line">        queue.add(root);</span><br><span class="line">        <span class="keyword">int</span> levelCount;</span><br><span class="line">        List&lt;Integer&gt; singleLevel = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span>(!queue.isEmpty()) &#123;</span><br><span class="line">            levelCount = queue.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; levelCount; i++) &#123;</span><br><span class="line">                TreeNode current = queue.poll();</span><br><span class="line">                <span class="keyword">if</span> (current.left != <span class="keyword">null</span>) queue.add(current.left);</span><br><span class="line">                <span class="keyword">if</span> (current.right != <span class="keyword">null</span>) queue.add(current.right);</span><br><span class="line">                singleLevel.add(current.val);</span><br><span class="line">            &#125;</span><br><span class="line">            res.add(singleLevel);</span><br><span class="line">            singleLevel = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="DFS（递归思路）的应用-No-337-打家劫舍-III-House-Robber-III"><a href="#DFS（递归思路）的应用-No-337-打家劫舍-III-House-Robber-III" class="headerlink" title="DFS（递归思路）的应用 - No.337 打家劫舍 III House Robber III"></a>DFS（递归思路）的应用 - No.337 打家劫舍 III House Robber III</h3><p>一开始的思路是，先层序遍历得到一个数组 <code>levelSum[]</code> 存储每层的节点的和，用常规的dp做。看评论发现如 <code>[2, 1, 3, null, 4]</code> 这样一棵树，对于相邻的两层结点，第一层右边的结点和第二层左边的结点可以求和，这棵树的最大值为<code>7</code>，而非层序遍历得到的<code>6</code>。所以应该自下向上的（递归）求解，每个结点计算在当前结点作为根的情况下，能偷到的最大值。</p>
-<ol>
-<li><p>暴力递归法 - 每个点返回【当前点作为根可以偷到的最大值】，which means 当前点可能偷，也可能不偷。</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// method1: 当前点加四个孙子可以偷到的最大值之和</span></span><br><span class="line"><span class="keyword">int</span> method1 = root.val + rob(root.left.left) + rob(root.left.right) + rob(root.right.left) + rob(root.right.right);</span><br><span class="line"><span class="comment">// method2: 两个儿子可以偷到的最大值之和</span></span><br><span class="line"><span class="keyword">int</span> method2 = rob(root.left) + rob(root.right);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Math.max(method1, method2);</span><br></pre></td></tr></table></figure>
-
-<p> 这种解法速度太慢，因为【重复计算】，爷爷层在<code>method1</code>中计算了孙子层的和，父亲层又在<code>method2</code>中计算了一遍孙子层的和。</p>
-</li>
-<li><p>优化的递归解法①（记忆化递归） - 定义一个<code>HashMap</code>保存计算过的值，若当前计算的结点已包含在这个<code>hashmap</code>中，直接返回<code>hashmap.get(currentNode)</code></p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (hashmap.containsKey(root)) <span class="keyword">return</span> hashmap.get(root);</span><br><span class="line">        <span class="keyword">int</span> rob_current = root.val;</span><br><span class="line">        <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) rob_current += rob(root.left.left) + rob(root.left.right);</span><br><span class="line">        <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) rob_current += rob(root.right.left) + rob(root.right.right);</span><br><span class="line">        <span class="keyword">int</span> no_rob_current = rob(root.left) + rob(root.right);</span><br><span class="line">        <span class="keyword">int</span> current_max = Math.max(rob_current, no_rob_current);</span><br><span class="line">        hashmap.put(root, current_max);</span><br><span class="line">        <span class="keyword">return</span> current_max;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">// 用时 3ms, 内存 39.3 MB</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进一步优化的递归解法② - 前两种方法重复性计算的根本原因在于，需要不断接触当前结点的儿子节点和孙子节点，相当于一次只迈一级台阶，但脚要多碰一次下面的下面一级。如果，儿子结点能提供孙子结点相关的信息，就可以不必再多沾地一次。参考自力扣题解区：方法不再返回一个int<code>值</code>，反而返回一个<code>int[]</code>数组，<code>int[0]</code>代表该结点没被抢的最大值，<code>int[1]</code>代表该节点被抢了的最大值。而前两种思路中，访问孙子结点的部分，就可以转变为左右两节点的<code>int[0]</code>相加。</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] root_res = robHelper(root);</span><br><span class="line">        <span class="keyword">return</span> Math.max(root_res[<span class="number">0</span>], root_res[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] robHelper(TreeNode root) &#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] left = robHelper(root.left);</span><br><span class="line">        <span class="keyword">int</span>[] right = robHelper(root.right);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> rob_current = left[<span class="number">0</span>] + right[<span class="number">0</span>] + root.val;</span><br><span class="line">        <span class="keyword">int</span> no_rob_current = Math.max(left[<span class="number">0</span>], left[<span class="number">1</span>]) + Math.max(right[<span class="number">0</span>], right[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;no_rob_current, rob_current&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">// 用时 1ms, 内存 39.2 MB</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/15/LeetCode-%E6%A0%91%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A102%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86-337%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8DIII/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1196,7 +1214,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] dailyTemperatures(<span class="keyword">int</span>[] T) &#123;</span><br><span class="line">        <span class="keyword">int</span> len = T.length;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (T[j] &gt; T[i]) &#123;</span><br><span class="line">                    res[i] = j - i;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>时间复杂度为O(N^2)</p>
-<h2 id="对暴力法的优化"><a href="#对暴力法的优化" class="headerlink" title="对暴力法的优化"></a>对暴力法的优化</h2><p>由于每天都需得到一解，至少遍历一次数组，目前的时间复杂度为O(N)，那么在确定某天后，减少其对数组的二次遍历。答案为：<strong>从右往左遍历</strong>,这样做的好处是，在当前位置<code>k</code>与<code>k+1</code>比较，若<code>T[k] &gt; T[k + 1]</code>，可以根据 result[k+1]的值，直接找比<code>k+1</code>大的值再次比较，而不用与比<code>k+1</code>小的值比较。</p>
+<h2 id="对暴力法的优化"><a href="#对暴力法的优化" class="headerlink" title="对暴力法的优化"></a>对暴力法的优化</h2>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/06/11/LeetCode-No739-Daily-Temperature-No42-Trapping-Rain-Water/#more" rel="contents">
@@ -1287,7 +1305,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1300,7 +1318,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

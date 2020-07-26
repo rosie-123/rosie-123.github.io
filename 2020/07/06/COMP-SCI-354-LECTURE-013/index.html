@@ -87,7 +87,7 @@
 <meta property="og:description" content="Bitwise OperationsCasting Review123&#x2F;&#x2F; Type casting short to unsigned intshort x &#x3D; 0xCFC7; &#x2F;&#x2F; -12345unsigned int y &#x3D; (unsigned)x;  This code is doing (1) 2 bytes to 4 bytes (2) signed to unsigned. So w">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/07/UF1UOJ.md.png">
 <meta property="article:published_time" content="2020-07-06T22:01:17.000Z">
-<meta property="article:modified_time" content="2020-07-06T22:09:59.421Z">
+<meta property="article:modified_time" content="2020-07-26T05:12:57.856Z">
 <meta property="article:author" content="RC">
 <meta property="article:tag" content="Course Notes">
 <meta name="twitter:card" content="summary">
@@ -330,7 +330,7 @@
 <li>Then signed to unsigned: Still 0xFFFF CFC7 which is 42945495</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"x = %hX, x = %d \n"</span>, x, x);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"y = %dX, y = &amp;u \n"</span>, y, y);</span><br></pre></td></tr></table></figure>
-
+<a id="more"></a>
 <h3 id="Default-Casting"><a href="#Default-Casting" class="headerlink" title="Default Casting"></a>Default Casting</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -1 &lt; 0 true</span></span><br><span class="line"><span class="comment">// -1 &lt; 0U</span></span><br><span class="line"><span class="comment">// U makes the literal value into an unsigned number</span></span><br><span class="line"><span class="comment">// Signed type is converted to unsigned type by default</span></span><br><span class="line"><span class="comment">// So -1 &lt; 0U is false</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="The-endianness"><a href="#The-endianness" class="headerlink" title="The endianness"></a>The endianness</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">0x87654321</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;num;</span><br><span class="line"><span class="keyword">char</span> *pc = (<span class="keyword">char</span> *)p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%p: mem[%d] = %hhx \n"</span>, &amp;pc[i], i, pc[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -483,7 +483,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -496,7 +496,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
