@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="apply() apply() is different from call() when there exists parameters  12345678910function addNumbers(a, b, c)&amp;#123;    return this.firstName + &quot; calculated &quot; + (a + b + c);&amp;#125;var r &#x3D; &amp;#123;    fir">
+<meta name="description" content="Scales Domain &amp; Range: Input &amp; Output  Scale   123const y &#x3D; d3.scaleLinear();    .domain([0, 1000])    .range([0, 500])    To use this scale   1.attr(&#39;height&#39;, d &#x3D;&gt; y(d.orders))">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apply&amp;Bind">
-<meta property="og:url" content="http://yoursite.com/2020/08/04/Apply-Bind/index.html">
+<meta property="og:title" content="d3(2) Bar Charts">
+<meta property="og:url" content="http://yoursite.com/2020/08/17/d3-2-Bar-Charts/index.html">
 <meta property="og:site_name" content="Let&#39;s Go Pippi Shrimp">
-<meta property="og:description" content="apply() apply() is different from call() when there exists parameters  12345678910function addNumbers(a, b, c)&amp;#123;    return this.firstName + &quot; calculated &quot; + (a + b + c);&amp;#125;var r &#x3D; &amp;#123;    fir">
-<meta property="article:published_time" content="2020-08-04T06:55:30.000Z">
-<meta property="article:modified_time" content="2020-08-14T01:18:46.087Z">
+<meta property="og:description" content="Scales Domain &amp; Range: Input &amp; Output  Scale   123const y &#x3D; d3.scaleLinear();    .domain([0, 1000])    .range([0, 500])    To use this scale   1.attr(&#39;height&#39;, d &#x3D;&gt; y(d.orders))">
+<meta property="article:published_time" content="2020-08-17T19:21:29.000Z">
+<meta property="article:modified_time" content="2020-08-17T19:22:27.559Z">
 <meta property="article:author" content="RC">
 <meta property="article:tag" content="Web Development">
 <meta name="twitter:card" content="summary">
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/08/04/Apply-Bind/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/17/d3-2-Bar-Charts/"/>
 
 
 
 
 
-  <title>Apply&Bind | Let's Go Pippi Shrimp</title>
+  <title>d3(2) Bar Charts | Let's Go Pippi Shrimp</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/04/Apply-Bind/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/17/d3-2-Bar-Charts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RC">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Apply&Bind</h1>
+          <h1 class="post-title" itemprop="name headline">d3(2) Bar Charts</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-04T01:55:30-05:00">
-                2020-08-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-17T14:21:29-05:00">
+                2020-08-17
               </time>
             
 
@@ -319,33 +319,47 @@
       
 
       
-        <h3 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h3><ul>
-<li><code>apply()</code> is different from <code>call()</code> when there exists parameters</li>
-</ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addNumbers</span>(<span class="params">a, b, c</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">" calculated "</span> + (a + b + c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> r = &#123;</span><br><span class="line">    firstName: <span class="string">'Rosie'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// call() version</span></span><br><span class="line">addNumbers.call(r, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// apply() version</span></span><br><span class="line">addNumbers.apply(r, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<ul>
-<li><p>Use cases</p>
-<ul>
-<li><p>When a function does not accept an array, <code>apply()</code> spread out values in an array</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nums = [<span class="number">5</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// Math.max(nums) will not work</span></span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="keyword">this</span>, nums);</span><br></pre></td></tr></table></figure>
+        <h3 id="Scales"><a href="#Scales" class="headerlink" title="Scales"></a>Scales</h3><ul>
+<li><p>Domain &amp; Range: Input &amp; Output</p>
+</li>
+<li><p>Scale</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> y = d3.scaleLinear();</span><br><span class="line">    .domain([<span class="number">0</span>, <span class="number">1000</span>])</span><br><span class="line">    .range([<span class="number">0</span>, <span class="number">500</span>])</span><br></pre></td></tr></table></figure>
 
+<p>  To use this scale</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.attr(<span class="string">'height'</span>, d =&gt; y(d.orders))</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li><p>Band scales - scales on x coordinate</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = d3.scaleBand()</span><br><span class="line">    .domain(data.map(<span class="function"><span class="params">item</span> =&gt;</span> item.name)) <span class="comment">// an array of 'names'</span></span><br><span class="line">    .range([<span class="number">0</span>, <span class="number">500</span>])</span><br><span class="line"></span><br><span class="line">x(<span class="string">'A name'</span>) <span class="comment">// the parameter should be a value in the previous array</span></span><br><span class="line">x.bandwidth() <span class="comment">// return the width of each bar (same)</span></span><br></pre></td></tr></table></figure>
+
+<p>  To use the bandwidth</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rects.attr(<span class="string">'width'</span>, x.bandwidth) <span class="comment">// the width of each bar</span></span><br><span class="line">    .attr(<span class="string">'x'</span>, d =&gt; x(d.name)) <span class="comment">// seperate each bar</span></span><br></pre></td></tr></table></figure>
+
+<p>  To add ‘paddings’ between bars</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = d3.scaleBand()</span><br><span class="line">    .domain(data.map(<span class="function"><span class="params">item</span> =&gt;</span> item.name)) <span class="comment">// an array of 'names'</span></span><br><span class="line">    .range([<span class="number">0</span>, <span class="number">500</span>])</span><br><span class="line">    .paddingInner(<span class="number">0.2</span>)</span><br><span class="line">    .paddingOuter(<span class="number">0.2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>If the input exceeds the domain - Min, Max &amp; Extent</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> min = d3.min(data, d =&gt; d.orders)</span><br><span class="line"><span class="keyword">const</span> max = d3.max(data, d =&gt; d.orders)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> extent = d3.extent(data, d =&gt; d.orders) <span class="comment">// find both min &amp; max</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Margins &amp; Groups</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> margin = &#123;<span class="attr">top</span>: <span class="number">20</span>, <span class="attr">right</span>: <span class="number">20</span>, <span class="attr">bottom</span>: <span class="number">100</span>, <span class="attr">left</span>: <span class="number">100</span>&#125;</span><br><span class="line"><span class="keyword">const</span> graphWidth = <span class="number">600</span> - margin.left - margin.right;</span><br><span class="line"><span class="keyword">const</span> graphHeight = <span class="number">600</span> - margin.top - margin.bottom;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> graph = svg.append(<span class="string">'g'</span>)</span><br><span class="line">    .attr(<span class="string">'width'</span>, graphWidth)</span><br><span class="line">    .attr(<span class="string">'height'</span>, graphHeight)</span><br><span class="line">    .attr(<span class="string">'transform'</span>, <span class="string">`translate(<span class="subst">$&#123;margin.left&#125;</span>,<span class="subst">$&#123;margin.top&#125;</span>)`</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Axis</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xAxisGroup = graph.append(<span class="string">'g'</span>);</span><br><span class="line">    .attr(<span class="string">'transform'</span>, <span class="string">`translate(0, <span class="subst">$&#123;graphHeight&#125;</span>)`</span>); <span class="comment">// shift the axis to the bottom</span></span><br><span class="line"><span class="keyword">const</span> yAxisGroup = graph.append(<span class="string">'g'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> xAxies = d3.axisBottom(x);</span><br><span class="line"><span class="keyword">const</span> yAxies = d3.axisLeft(y);</span><br><span class="line"></span><br><span class="line">xAxisGroup.call(xAxis);</span><br><span class="line">yAxisGroup.call(yAxis);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Invert the bar chart</p>
+<ol>
+<li><p>Switch the direction of output</p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> y = d3.scaleLinear()</span><br><span class="line">    .domain([<span class="number">0</span>, d3.max(data, d =&gt; d.orders)])</span><br><span class="line">    .range([graphHeight, <span class="number">0</span>]); <span class="comment">// switch the order</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ... down below</span></span><br><span class="line">rects.enter()</span><br><span class="line">    .append(<span class="string">'rect'</span>)</span><br><span class="line">    .attr(<span class="string">'height'</span>, d =&gt; graphHeight - y(d.orders));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Change each bar’s starting position</p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// rects.attr()</span></span><br><span class="line"></span><br><span class="line">rects.enter()</span><br><span class="line">    .append(<span class="string">'rect'</span>)</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    .attr(<span class="string">'y'</span>, d =&gt; y(d.orders))</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>Tick formatting</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> yAxis = d3.axisLeft(y)</span><br><span class="line">    .ticks(<span class="number">5</span>) <span class="comment">// how many ticks (not exactly) will be displayed</span></span><br><span class="line">    .tickFormat(<span class="function"><span class="params">d</span> =&gt;</span> d + <span class="string">' orders'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// To rotate the x axis ticks</span></span><br><span class="line">xAxisGroup.selectAll(<span class="string">'text'</span>)</span><br><span class="line">    .attr(<span class="string">'transform'</span>, <span class="string">'rotate(-40)'</span>)</span><br><span class="line">    .attr(<span class="string">'text-anchor'</span>, <span class="string">'end'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h3><p>The parameters work like <code>call()</code>, but <code>bind()</code> returns a function with ‘this’ bound already. Also, we can just pass a part of parameters, and store this function for later uses.</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> meCal = addNumbers(r, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">meCal(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<p><code>setTimeout(function, elapseTime)</code> works on window object.</p>
-<p>A tricky Issue</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> r = &#123;</span><br><span class="line">    firstName: <span class="string">'Rosie'</span>,</span><br><span class="line">    sayHi: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"Hi "</span> + <span class="keyword">this</span>.firstName);</span><br><span class="line">        &#125;, <span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Since <code>setTimeout</code> is called 1000ms later, so <code>this</code> is refer to the <code>window</code>.</p>
-<p>By attaching <code>call()</code> or <code>apply()</code>, it can refer to the declared object. To save the function for later uses, <code>bind()</code> can be used.</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Hi "</span> + <span class="keyword">this</span>.firstName);</span><br><span class="line">&#125;.bind(<span class="keyword">this</span>), <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="The-‘new’-keyword"><a href="#The-‘new’-keyword" class="headerlink" title="The ‘new’ keyword"></a>The ‘new’ keyword</h3><p>‘<code>new</code>‘ will set the context of <code>this</code></p>
 
       
     </div>
@@ -376,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/27/JavaScript-Array-Methods/" rel="next" title="JavaScript Array Methods">
-                <i class="fa fa-chevron-left"></i> JavaScript Array Methods
+              <a href="/2020/08/17/d3-1-Basics/" rel="next" title="d3(1) Basics">
+                <i class="fa fa-chevron-left"></i> d3(1) Basics
               </a>
             
           </div>
@@ -385,10 +399,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/08/06/Node-js-notes-part-1/" rel="prev" title="Node.js notes part 1">
-                Node.js notes part 1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -531,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-number">1.</span> <span class="nav-text">apply()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-number">2.</span> <span class="nav-text">bind()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-‘new’-keyword"><span class="nav-number">3.</span> <span class="nav-text">The ‘new’ keyword</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scales"><span class="nav-number">1.</span> <span class="nav-text">Scales</span></a></li></ol></div>
             
 
           </div>
