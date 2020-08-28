@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Web Development," />
 
 
 
@@ -79,16 +79,19 @@
 
 
 
-<meta name="description" content="Rosie&#39;s Computer Science Notes">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="Notes for MEDIUM Terminology Application state - A global obkect which holds info for various purposes in the app (e.g. A loading indicator should be stored as a boolean field to decide whether to be">
+<meta property="og:type" content="article">
+<meta property="og:title" content="REDUX">
+<meta property="og:url" content="http://yoursite.com/2020/08/28/REDUX/index.html">
 <meta property="og:site_name" content="Let&#39;s Go Pippi Shrimp">
-<meta property="og:description" content="Rosie&#39;s Computer Science Notes">
-<meta property="article:published_time" content="2020-06-11T22:26:34.000Z">
-<meta property="article:modified_time" content="2020-06-11T22:26:34.303Z">
+<meta property="og:description" content="Notes for MEDIUM Terminology Application state - A global obkect which holds info for various purposes in the app (e.g. A loading indicator should be stored as a boolean field to decide whether to be">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/28/dIDTE9.png">
+<meta property="article:published_time" content="2020-08-28T06:39:10.000Z">
+<meta property="article:modified_time" content="2020-08-28T06:42:31.216Z">
 <meta property="article:author" content="RC">
+<meta property="article:tag" content="Web Development">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/08/28/dIDTE9.png">
 
 
 
@@ -118,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/28/REDUX/"/>
 
 
 
 
 
-  <title>about | Let's Go Pippi Shrimp</title>
+  <title>REDUX | Let's Go Pippi Shrimp</title>
   
 
 
@@ -239,33 +242,182 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/28/REDUX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_6366.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Let's Go Pippi Shrimp">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">REDUX</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-28T01:39:10-05:00">
+                2020-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>Notes for <a href="https://medium.com/javascript-in-plain-english/the-only-introduction-to-redux-and-react-redux-youll-ever-need-8ce5da9e53c6" target="_blank" rel="noopener">MEDIUM</a></p>
+<h2 id="Terminology"><a href="#Terminology" class="headerlink" title="Terminology"></a>Terminology</h2><ul>
+<li>Application state - A global obkect which holds <strong>info for various purposes</strong> in the app (e.g. A loading indicator should be stored as a boolean field to decide whether to be displayed)</li>
+<li><strong>Serializable data</strong> - The only thing should be stored in Redux</li>
+<li>Two patterns Redux follows<ol>
+<li><strong>Single Source of Truth</strong>: one app - one store - one state (Components are free to contain internal state)</li>
+<li><strong>Immutability</strong>: The state object will not be directly changed. We need to create a new object, recalculate the app state and update it with the newly-created object, and leave the old state intact.</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/08/28/dIDTE9.png" alt="REDUX DATA FLOW"></p>
+<ul>
+<li>Three main parts in Redux<ol>
+<li>Actions</li>
+<li>Reducers</li>
+<li>Store<a id="more"></a>
+<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2></li>
+</ol>
+</li>
+</ul>
+<p>Store is an <strong>object</strong>, not a class. To follow the pattern, only one store needed to be created.</p>
+<p>Store is a “<strong>state tree</strong>“, put whatever data needed to the store and nest them.</p>
+<h2 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h2><p>Describe <strong>what happened</strong>.</p>
+<p>The actions will be <strong>dispatch (send) to the store</strong>, whenever the state needed to be updated.</p>
+<p>Actions need to contain a <code>type</code> field, to describe what kind of action we are dispatching.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    type: ADD_NOTE,</span><br><span class="line">    title: <span class="string">'some title'</span>, <span class="comment">// optional</span></span><br><span class="line">    content: <span class="string">'Hi content'</span>, <span class="comment">// optional</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Action creator will generate dynamic actions as a function which returns an object.</p>
+<h2 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h2><p><strong>functions</strong> that define <strong>HOW the state changes.</strong></p>
+<p>The action will be passed to the reducer, a reducer function takes two parameters <code>previousState</code> and <code>action</code>.</p>
+<p>Reducer will calculate the new state of the app.</p>
+<p>In a real-world app, we seperate reducers into multiple simpler one, and combine them with a helper function called <code>combineReducers</code>.</p>
+<h3 id="Data-flow"><a href="#Data-flow" class="headerlink" title="Data flow"></a>Data flow</h3><p>If user triggers an event, clicks a button for example.</p>
+<ol>
+<li>The event handler function dispatches an action to the store, with <code>store.dispatch()</code>.</li>
+<li>Redux passes the dispatched action to the reducer.</li>
+<li>The store saves the new state returned by the reducer.</li>
+<li>Since we subscribe the store, the function we provided will be called and update the UI.</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web-Development/" rel="tag"># Web Development</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/17/d3-2-Bar-Charts/" rel="next" title="d3(2) Bar Charts">
+                <i class="fa fa-chevron-left"></i> d3(2) Bar Charts
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -298,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -370,6 +531,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Terminology"><span class="nav-number">1.</span> <span class="nav-text">Terminology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Store"><span class="nav-number">2.</span> <span class="nav-text">Store</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Actions"><span class="nav-number">3.</span> <span class="nav-text">Actions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reducer"><span class="nav-number">4.</span> <span class="nav-text">Reducer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-flow"><span class="nav-number">4.1.</span> <span class="nav-text">Data flow</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
