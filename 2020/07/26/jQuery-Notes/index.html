@@ -1,85 +1,12 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html lang=zh>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Web Development," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="DOM represents an HTML document as a tree structure of nodes, wherein each node is an object representing a part of the document. The nodes are objects that have properties and methods, and these ent">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="DOM represents an HTML document as a tree structure of nodes, wherein each node is an object representing a part of the document. The nodes are objects that have properties and methods, and these ent">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery Notes">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/jQuery-Notes/index.html">
@@ -90,236 +17,150 @@
 <meta property="article:author" content="RC">
 <meta property="article:tag" content="Web Development">
 <meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>jQuery Notes</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
 
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2020/07/26/jQuery-Notes/"/>
-
-
-
-
-
-  <title>jQuery Notes | Let's Go Pippi Shrimp</title>
-  
-
-
-
-
-
-
-
-
+    
+    <!-- rss -->
+    
+    
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
+<body class="max-width mx-auto px3 ltr">
     
-  
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/rosie-123" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/07/26/AJAX-Notes/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/07/26/JavaScript-Promise/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/07/26/jQuery-Notes/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/07/26/jQuery-Notes/&text=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/07/26/jQuery-Notes/&is_video=false&description=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=jQuery Notes&body=Check out this article: http://yoursite.com/2020/07/26/jQuery-Notes/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/07/26/jQuery-Notes/&name=jQuery Notes&description=&lt;ul&gt;
+&lt;li&gt;DOM represents an HTML document as a tree structure of nodes, wherein each node is an object representing a part of the document. The nodes are objects that have properties and methods, and these entities can be accessed via JavaScript and its libraries such as jQuery.&lt;/li&gt;
+&lt;li&gt;It has become common practice to link the main JS file at the bottom of the HTML document, usually before the &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt; tag.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;When-the-document-is-ready&#34;&gt;&lt;a href=&#34;#When-the-document-is-ready&#34; class=&#34;headerlink&#34; title=&#34;When the document is ready&#34;&gt;&lt;/a&gt;When the document is ready&lt;/h3&gt;&lt;p&gt;There are two ways to handle the ‘document ready’ event&lt;/p&gt;
+&lt;figure class=&#34;highlight jsx&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$(&lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;).ready(&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// jQuery, e.g. $(&#39;body&#39;).append(&#34;&amp;lt;div&amp;gt;Hi&amp;lt;/div&amp;gt;&#34;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$(&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// More recommended approach&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+&lt;h3 id=&#34;jQuery-Selectors&#34;&gt;&lt;a href=&#34;#jQuery-Selectors&#34; class=&#34;headerlink&#34; title=&#34;jQuery Selectors&#34;&gt;&lt;/a&gt;jQuery Selectors&lt;/h3&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2020/07/26/jQuery-Notes/&t=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Let's Go Pippi Shrimp</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
     </div>
-      
-        <p class="site-subtitle">Rosie's Blog</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#When-the-document-is-ready"><span class="toc-number">1.</span> <span class="toc-text">When the document is ready</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery-Selectors"><span class="toc-number">2.</span> <span class="toc-text">jQuery Selectors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery-Methods"><span class="toc-number">3.</span> <span class="toc-text">jQuery Methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Binding-events"><span class="toc-number">4.</span> <span class="toc-text">Binding events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mousemove-events"><span class="toc-number">5.</span> <span class="toc-text">Mousemove events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Event-Source"><span class="toc-number">6.</span> <span class="toc-text">Event Source</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Removing-elements"><span class="toc-number">7.</span> <span class="toc-text">Removing elements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#is-method"><span class="toc-number">8.</span> <span class="toc-text">is() method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Effects"><span class="toc-number">9.</span> <span class="toc-text">Effects</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Asynchronous"><span class="toc-number">10.</span> <span class="toc-text">Asynchronous</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#References"><span class="toc-number">11.</span> <span class="toc-text">References</span></a></li></ol>
+    </div>
+  </span>
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/home" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/26/jQuery-Notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/IMG_6366.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Let's Go Pippi Shrimp">
-    </span>
-
-    
-      <header class="post-header">
-
+    <div class="content index py4">
         
-        
-          <h1 class="post-title" itemprop="name headline">jQuery Notes</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-26T14:46:59-05:00">
-                2020-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
     
+    <h1 class="posttitle" itemprop="name headline">
+        jQuery Notes
+    </h1>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Let's Go Pippi Shrimp</span>
+      </span>
       
+    <div class="postdate">
+      
+        <time datetime="2020-07-26T19:46:59.000Z" itemprop="datePublished">2020-07-26</time>
+        
+      
+    </div>
+
+
       
 
       
-        <ul>
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Web-Development/" rel="tag">Web Development</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <ul>
 <li>DOM represents an HTML document as a tree structure of nodes, wherein each node is an object representing a part of the document. The nodes are objects that have properties and methods, and these entities can be accessed via JavaScript and its libraries such as jQuery.</li>
 <li>It has become common practice to link the main JS file at the bottom of the HTML document, usually before the <code>&lt;/body&gt;</code> tag.</li>
 </ul>
@@ -372,401 +213,149 @@
 </ul>
 <h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><p><a href="http://zetcode.com/web/jquery/" target="_blank" rel="noopener">http://zetcode.com/web/jquery/</a></p>
 
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Web-Development/" rel="tag"># Web Development</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/07/26/JavaScript-Promise/" rel="next" title="JavaScript Promise">
-                <i class="fa fa-chevron-left"></i> JavaScript Promise
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/26/AJAX-Notes/" rel="prev" title="AJAX Notes">
-                AJAX Notes <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
+</article>
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/uploads/IMG_6366.JPG"
-                alt="RC" />
-            
-              <p class="site-author-name" itemprop="name">RC</p>
-              <p class="site-description motion-element" itemprop="description">Rosie's Computer Science Notes</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives">
-              
-                  <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/rosie-123" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="rcao34@wisc.edu" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#When-the-document-is-ready"><span class="nav-number">1.</span> <span class="nav-text">When the document is ready</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-Selectors"><span class="nav-number">2.</span> <span class="nav-text">jQuery Selectors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-Methods"><span class="nav-number">3.</span> <span class="nav-text">jQuery Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Binding-events"><span class="nav-number">4.</span> <span class="nav-text">Binding events</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mousemove-events"><span class="nav-number">5.</span> <span class="nav-text">Mousemove events</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-Source"><span class="nav-number">6.</span> <span class="nav-text">Event Source</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Removing-elements"><span class="nav-number">7.</span> <span class="nav-text">Removing elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#is-method"><span class="nav-number">8.</span> <span class="nav-text">is() method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Effects"><span class="nav-number">9.</span> <span class="nav-text">Effects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Asynchronous"><span class="nav-number">10.</span> <span class="nav-text">Asynchronous</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">11.</span> <span class="nav-text">References</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
 
 
         
-      </div>
-    </main>
+          <div id="footer-post-container">
+  <div id="footer-post">
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">RC</span>
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/rosie-123" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </div>
 
-  
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#When-the-document-is-ready"><span class="toc-number">1.</span> <span class="toc-text">When the document is ready</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery-Selectors"><span class="toc-number">2.</span> <span class="toc-text">jQuery Selectors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery-Methods"><span class="toc-number">3.</span> <span class="toc-text">jQuery Methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Binding-events"><span class="toc-number">4.</span> <span class="toc-text">Binding events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mousemove-events"><span class="toc-number">5.</span> <span class="toc-text">Mousemove events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Event-Source"><span class="toc-number">6.</span> <span class="toc-text">Event Source</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Removing-elements"><span class="toc-number">7.</span> <span class="toc-text">Removing elements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#is-method"><span class="toc-number">8.</span> <span class="toc-text">is() method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Effects"><span class="toc-number">9.</span> <span class="toc-text">Effects</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Asynchronous"><span class="toc-number">10.</span> <span class="toc-text">Asynchronous</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#References"><span class="toc-number">11.</span> <span class="toc-text">References</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/07/26/jQuery-Notes/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/07/26/jQuery-Notes/&text=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/07/26/jQuery-Notes/&is_video=false&description=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=jQuery Notes&body=Check out this article: http://yoursite.com/2020/07/26/jQuery-Notes/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/07/26/jQuery-Notes/&title=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/07/26/jQuery-Notes/&name=jQuery Notes&description=&lt;ul&gt;
+&lt;li&gt;DOM represents an HTML document as a tree structure of nodes, wherein each node is an object representing a part of the document. The nodes are objects that have properties and methods, and these entities can be accessed via JavaScript and its libraries such as jQuery.&lt;/li&gt;
+&lt;li&gt;It has become common practice to link the main JS file at the bottom of the HTML document, usually before the &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt; tag.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;When-the-document-is-ready&#34;&gt;&lt;a href=&#34;#When-the-document-is-ready&#34; class=&#34;headerlink&#34; title=&#34;When the document is ready&#34;&gt;&lt;/a&gt;When the document is ready&lt;/h3&gt;&lt;p&gt;There are two ways to handle the ‘document ready’ event&lt;/p&gt;
+&lt;figure class=&#34;highlight jsx&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$(&lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;).ready(&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// jQuery, e.g. $(&#39;body&#39;).append(&#34;&amp;lt;div&amp;gt;Hi&amp;lt;/div&amp;gt;&#34;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$(&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// More recommended approach&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;jQuery-Selectors&#34;&gt;&lt;a href=&#34;#jQuery-Selectors&#34; class=&#34;headerlink&#34; title=&#34;jQuery Selectors&#34;&gt;&lt;/a&gt;jQuery Selectors&lt;/h3&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2020/07/26/jQuery-Notes/&t=jQuery Notes" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
 </div>
 
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
         
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
-
-    
-
+    2020
+    RC
   </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/rosie-123" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
 
   
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
