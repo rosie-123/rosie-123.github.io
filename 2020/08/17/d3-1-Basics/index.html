@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="SVG: Scalable Vector Graphics  123456789&lt;!-- using an img tag --&gt;&lt;img src&#x3D;&quot;some.svg&quot; alt&#x3D;&quot;&quot;&gt;&lt;!-- using SVG tags --&gt;&lt;svg width&#x3D;&quot;600&quot; height&#x3D;&quot;600&quot;&gt;    &lt;circle cx&#x3D;&#39;150&#39; cy&#x3D;&#39;15">
+<meta property="og:type" content="article">
+<meta property="og:title" content="d3(1) Basics">
+<meta property="og:url" content="http://yoursite.com/2020/08/17/d3-1-Basics/index.html">
+<meta property="og:site_name" content="Let&#39;s Go Pippi Shrimp">
+<meta property="og:description" content="SVG: Scalable Vector Graphics  123456789&lt;!-- using an img tag --&gt;&lt;img src&#x3D;&quot;some.svg&quot; alt&#x3D;&quot;&quot;&gt;&lt;!-- using SVG tags --&gt;&lt;svg width&#x3D;&quot;600&quot; height&#x3D;&quot;600&quot;&gt;    &lt;circle cx&#x3D;&#39;150&#39; cy&#x3D;&#39;15">
+<meta property="article:published_time" content="2020-08-17T15:27:59.000Z">
+<meta property="article:modified_time" content="2020-08-17T15:28:47.459Z">
+<meta property="article:author" content="RC">
+<meta property="article:tag" content="Web Development">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>d3(1) Basics</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/rosie-123" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/08/17/d3-2-Bar-Charts/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/08/13/Object-Oriented-JavaScript/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/08/17/d3-1-Basics/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/08/17/d3-1-Basics/&text=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/08/17/d3-1-Basics/&is_video=false&description=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=d3(1) Basics&body=Check out this article: http://yoursite.com/2020/08/17/d3-1-Basics/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/08/17/d3-1-Basics/&name=d3(1) Basics&description=&lt;ul&gt;
+&lt;li&gt;SVG: Scalable Vector Graphics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- using an img tag --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#34;some.svg&#34;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;alt&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#34;&#34;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- using SVG tags --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;svg&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;width&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#34;600&#34;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;height&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#34;600&#34;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;circle&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;cx&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#39;150&#39;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;cy&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#39;150&#39;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;r&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#39;5&#39;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;fill&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#39;grey&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;circle&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;svg&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- JavaScript --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In HTML file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight jsx&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;svg width=&lt;span class=&#34;string&#34;&gt;&#34;600&#34;&lt;/span&gt; height=&lt;span class=&#34;string&#34;&gt;&#34;600&#34;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;lt;rect x=&lt;span class=&#34;string&#34;&gt;&#34;300&#34;&lt;/span&gt; y=&lt;span class=&#34;string&#34;&gt;&#34;100&#34;&lt;/span&gt; fill=&lt;span class=&#34;string&#34;&gt;&#34;blue&#34;&lt;/span&gt; width=&lt;span class=&#34;string&#34;&gt;&#34;100&#34;&lt;/span&gt; height=&lt;span class=&#34;string&#34;&gt;&#34;200&#34;&lt;/span&gt;&amp;gt;&amp;lt;&lt;span class=&#34;regexp&#34;&gt;/rect&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;regexp&#34;&gt;    &amp;lt;circle cx=&#34;200&#34; cy=&#34;200&#34; r=&#34;50&#34; fill=&#34;pink&#34; stroke=&#34;red&#34; stroke-width=&#34;2&#34;&amp;gt;&amp;lt;/&lt;/span&gt;circle&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;lt;line x1=&lt;span class=&#34;string&#34;&gt;&#34;100&#34;&lt;/span&gt; y1=&lt;span class=&#34;string&#34;&gt;&#34;100&#34;&lt;/span&gt; x2=&lt;span class=&#34;string&#34;&gt;&#34;120&#34;&lt;/span&gt; y2=&lt;span class=&#34;string&#34;&gt;&#34;300&#34;&lt;/span&gt; stroke=&lt;span class=&#34;string&#34;&gt;&#34;grey&#34;&lt;/span&gt; stroke-width=&lt;span class=&#34;string&#34;&gt;&#34;3&#34;&lt;/span&gt;&amp;gt;&amp;lt;&lt;span class=&#34;regexp&#34;&gt;/line&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;regexp&#34;&gt;&amp;lt;/&lt;/span&gt;svg&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2020/08/17/d3-1-Basics/&t=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#D3-basics"><span class="toc-number">1.</span> <span class="toc-text">D3 basics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-with-D3"><span class="toc-number">2.</span> <span class="toc-text">Data with D3</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        d3(1) Basics
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Let's Go Pippi Shrimp</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-08-17T15:27:59.000Z" itemprop="datePublished">2020-08-17</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Web-Development/" rel="tag">Web Development</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <ul>
+<li>SVG: Scalable Vector Graphics</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- using an img tag --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"some.svg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- using SVG tags --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"600"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">'150'</span> <span class="attr">cy</span>=<span class="string">'150'</span> <span class="attr">r</span>=<span class="string">'5'</span> <span class="attr">fill</span>=<span class="string">'grey'</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- JavaScript --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>In HTML file</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg width=<span class="string">"600"</span> height=<span class="string">"600"</span>&gt;</span><br><span class="line">    &lt;rect x=<span class="string">"300"</span> y=<span class="string">"100"</span> fill=<span class="string">"blue"</span> width=<span class="string">"100"</span> height=<span class="string">"200"</span>&gt;&lt;<span class="regexp">/rect&gt;</span></span><br><span class="line"><span class="regexp">    &lt;circle cx="200" cy="200" r="50" fill="pink" stroke="red" stroke-width="2"&gt;&lt;/</span>circle&gt;</span><br><span class="line">    &lt;line x1=<span class="string">"100"</span> y1=<span class="string">"100"</span> x2=<span class="string">"120"</span> y2=<span class="string">"300"</span> stroke=<span class="string">"grey"</span> stroke-width=<span class="string">"3"</span>&gt;&lt;<span class="regexp">/line&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>svg&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>SVG Paths</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;path d=<span class="string">"M150 0 L75 200 L225 200 Z"</span> fill=<span class="string">"orange"</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>M - moveto. The starting point</li>
+<li>L - lineto. Draw line to a certain point</li>
+<li>Z - closepath</li>
+<li>H/V - Horizontal/Vertical lineto</li>
+<li>C - Curveto</li>
+<li>S - Smooth curveto</li>
+</ul>
+<h3 id="D3-basics"><a href="#D3-basics" class="headerlink" title="D3 basics"></a>D3 basics</h3><ul>
+<li><p>Select an item <code>const d = d3.select(&#39;div&#39;);</code></p>
+</li>
+<li><p>Select all items <code>d3.selectAll(&#39;div&#39;);</code></p>
+</li>
+<li><p>Append tags to a container</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> svg = canvas.append(<span class="string">'svg'</span>);</span><br><span class="line">svg.append(<span class="string">'rect'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Method chainning &amp; attributes</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svg.attr(<span class="string">'height'</span>, <span class="number">600</span>);</span><br><span class="line">svg.append(<span class="string">'rect'</span>).attr(<span class="string">'height'</span>, <span class="number">300</span>).attr(<span class="string">'width'</span>, <span class="number">300</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Text element</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">svg.append(<span class="string">'text'</span>);</span><br><span class="line">   .attr(<span class="string">'x'</span>, <span class="number">20</span>)</span><br><span class="line">   .attr(<span class="string">'y'</span>, <span class="number">200</span>)</span><br><span class="line">   .attr(<span class="string">'fill'</span>, blue)</span><br><span class="line">   .text(<span class="string">'hello world!'</span>)</span><br><span class="line">   .style(<span class="string">'font-family'</span>, <span class="string">'arial'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Groups</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> group = svg.append(<span class="string">'g'</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Data-with-D3"><a href="#Data-with-D3" class="headerlink" title="Data with D3"></a>Data with D3</h3><ul>
+<li><p>Example without database</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = [</span><br><span class="line">    &#123;<span class="attr">width</span>: <span class="number">200</span>, <span class="attr">height</span>: <span class="number">100</span>, <span class="attr">fill</span>: <span class="string">'purple'</span>&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> svg = d3.select(<span class="string">'svg'</span>);</span><br><span class="line"><span class="keyword">const</span> rect = svg.select(<span class="string">'rect'</span>)</span><br><span class="line">    .data(data)</span><br><span class="line">    .attr(<span class="string">'width'</span>, (d, i, n) =&gt; d.width)</span><br><span class="line">    .attr(<span class="string">'height'</span>, d =&gt; d.height)</span><br><span class="line">    .attr(<span class="string">'fill'</span>, d =&gt; d.fill);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>For multiple elements, data with multiple entries will apply to each element automatically</p>
+</li>
+<li><p>If the data retrieved from database has more entries than the hard-coded DOM, then</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rects = d3.selectAll(<span class="string">'rect'</span>)</span><br><span class="line">    .data(data)</span><br><span class="line"></span><br><span class="line">rects.enter()</span><br><span class="line">    .append(<span class="string">'rect'</span>)</span><br><span class="line">    .attr()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Data with JSON</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> svg = d3.select(<span class="string">'svg'</span>);</span><br><span class="line">d3.json(<span class="string">'planets.json'</span>).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> circs = svg.selectAll(<span class="string">'circle'</span>) <span class="comment">// though there is no circle in the DOM</span></span><br><span class="line">     .data(data); <span class="comment">// bind the data to the invisible entries</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// add attrs to circs already in the DOM</span></span><br><span class="line">    circs.attr(<span class="string">'cy'</span>, <span class="number">200</span>)</span><br><span class="line">        .attr(<span class="string">'cx'</span>, d =&gt; d.distance)</span><br><span class="line">        .attr(<span class="string">'r'</span>, d =&gt; d.radius)</span><br><span class="line">        .attr(<span class="string">'fill'</span>, d =&gt; d.fill)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// append the enter selection to the DOM</span></span><br><span class="line">    circs.enter()</span><br><span class="line">        .append(<span class="string">'circle'</span>)</span><br><span class="line">        .attr(<span class="string">'cx'</span>, d =&gt; d.distance)</span><br><span class="line">        .attr(<span class="string">'r'</span>, d =&gt; d.radius)</span><br><span class="line">        .attr(<span class="string">'fill'</span>, d =&gt; d.fill)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/rosie-123" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#D3-basics"><span class="toc-number">1.</span> <span class="toc-text">D3 basics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-with-D3"><span class="toc-number">2.</span> <span class="toc-text">Data with D3</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/08/17/d3-1-Basics/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/08/17/d3-1-Basics/&text=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/08/17/d3-1-Basics/&is_video=false&description=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=d3(1) Basics&body=Check out this article: http://yoursite.com/2020/08/17/d3-1-Basics/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/08/17/d3-1-Basics/&title=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/08/17/d3-1-Basics/&name=d3(1) Basics&description=&lt;ul&gt;
+&lt;li&gt;SVG: Scalable Vector Graphics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- using an img tag --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#34;some.svg&#34;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;alt&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#34;&#34;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- using SVG tags --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;svg&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;width&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#34;600&#34;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;height&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#34;600&#34;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;circle&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;cx&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#39;150&#39;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;cy&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#39;150&#39;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;r&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#39;5&#39;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;fill&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&#39;grey&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;circle&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;svg&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- JavaScript --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In HTML file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight jsx&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;svg width=&lt;span class=&#34;string&#34;&gt;&#34;600&#34;&lt;/span&gt; height=&lt;span class=&#34;string&#34;&gt;&#34;600&#34;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;lt;rect x=&lt;span class=&#34;string&#34;&gt;&#34;300&#34;&lt;/span&gt; y=&lt;span class=&#34;string&#34;&gt;&#34;100&#34;&lt;/span&gt; fill=&lt;span class=&#34;string&#34;&gt;&#34;blue&#34;&lt;/span&gt; width=&lt;span class=&#34;string&#34;&gt;&#34;100&#34;&lt;/span&gt; height=&lt;span class=&#34;string&#34;&gt;&#34;200&#34;&lt;/span&gt;&amp;gt;&amp;lt;&lt;span class=&#34;regexp&#34;&gt;/rect&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;regexp&#34;&gt;    &amp;lt;circle cx=&#34;200&#34; cy=&#34;200&#34; r=&#34;50&#34; fill=&#34;pink&#34; stroke=&#34;red&#34; stroke-width=&#34;2&#34;&amp;gt;&amp;lt;/&lt;/span&gt;circle&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;lt;line x1=&lt;span class=&#34;string&#34;&gt;&#34;100&#34;&lt;/span&gt; y1=&lt;span class=&#34;string&#34;&gt;&#34;100&#34;&lt;/span&gt; x2=&lt;span class=&#34;string&#34;&gt;&#34;120&#34;&lt;/span&gt; y2=&lt;span class=&#34;string&#34;&gt;&#34;300&#34;&lt;/span&gt; stroke=&lt;span class=&#34;string&#34;&gt;&#34;grey&#34;&lt;/span&gt; stroke-width=&lt;span class=&#34;string&#34;&gt;&#34;3&#34;&lt;/span&gt;&amp;gt;&amp;lt;&lt;span class=&#34;regexp&#34;&gt;/line&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;regexp&#34;&gt;&amp;lt;/&lt;/span&gt;svg&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2020/08/17/d3-1-Basics/&t=d3(1) Basics" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020
+    RC
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/rosie-123" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
